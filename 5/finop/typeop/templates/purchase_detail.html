@@ -1,0 +1,8 @@
+{% extends 'list.html' %}
+
+{% block content %}
+    <h2>{{ purchase.amount }}</h2>
+    <p>Date Transaction: {{ purchase.date }}</p>
+    <p>Description: {{ purchase.description }}</p>
+    <a href="{% url 'purchase_delete' purchase.pk %}">Delete</a>
+{% endblock %}

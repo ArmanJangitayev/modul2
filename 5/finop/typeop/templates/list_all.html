@@ -1,0 +1,42 @@
+{% extends 'list.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Sales List</h2>
+            <ul class="list-group">
+                {% for sale in sales %}
+                    <li class="list-group-item">
+                        <a href="{% url 'sale_detail' sale.pk %}">{{ sale.date }} {{ sale.amount }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="col-md-6">
+            <h2>Purchase List</h2>
+            <ul class="list-group">
+                {% for purchase in purchases %}
+                    <li class="list-group-item">
+                        <a href="{% url 'purchase_detail' purchase.pk %}">{{ purchase.date }} {{ purchase.amount }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <h2>Transaction List</h2>
+        <ul class="list-group">
+            {% for transaction in transactions %}
+                <li class="list-group-item">
+                    <a href="{% url 'transaction_detail' transaction.pk %}">
+                        {{ transaction.date }} {{ transaction.type_transaction }} {{ transaction.amount }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <a class="btn btn-primary mt-3" href="{% url 'transaction_create' %}">Add Transaction</a>
+    </div>
+{% endblock %}
