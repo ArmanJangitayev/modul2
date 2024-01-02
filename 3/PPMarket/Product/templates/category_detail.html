@@ -1,0 +1,8 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h2>{{ category.category_name }}</h2>
+    <p>Description: {{ category.category_description }}</p>
+    <a href="{% url 'category_edit' category.pk %}">Edit</a>
+    <a href="{% url 'category_delete' category.pk %}">Delete</a>
+{% endblock %}
