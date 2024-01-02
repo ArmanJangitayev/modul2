@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  <h2>{{ profile.first_name }}</h2>
+  <p>Last Name: {{ profile.last_name }}</p>
+  <p>Address: {{ profile.address }}</p>
+  <p>Phone Number: {{ profile.phone_number }}</p>
+  <p>Date of Birth: {{ profile.date_of_birth }}</p>
+  <p>Hobby: {{ profile.hobby }}</p>
+  <p>Previous Workplace: {{ profile.previous_workplace }}</p>
+  <a href="{% url 'profile_edit' profile.pk %}">Edit</a>
+  <a href="{% url 'profile_delete' profile.pk %}">Delete</a>
+{% endblock %}

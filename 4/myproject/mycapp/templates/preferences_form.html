@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h2>Create/Edit Preferences</h2>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}

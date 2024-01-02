@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h2>{{ preferences.profile }}</h2>
+    <p>Favorite Categories: {{ preferences.favorite_categories }}</p>
+    <p>Preferred Brands: {{ preferences.preferred_brands }}</p>
+    <a href="{% url 'preferences_edit' preferences.pk %}">Edit</a>
+    <a href="{% url 'preferences_delete' preferences.pk %}">Delete</a>
+{% endblock %}

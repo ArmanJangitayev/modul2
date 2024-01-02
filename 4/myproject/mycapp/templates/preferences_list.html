@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h2>Preferences List</h2>
+    <ul>
+        {% for preferences in preferencess %}
+            <li><a href="{% url 'preferences_detail' preferences.pk %}">{{ preferences_detail }} {{ preferences.profile.first_name }} </a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'preferences_create' %}">Add Preferences</a>
+{% endblock %}
